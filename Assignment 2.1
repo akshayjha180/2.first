@@ -1,0 +1,190 @@
+
+a. Write a Java code with the class name, “acad,” and a method called “main.”
+Hard code the program with two integers and print the sum of those two
+integers.
+
+import java.util.Scanner;
+public class acad {
+public static void main(String[] args){
+//for hardcoding no need of stdin---Scanner sc=new Scanner(System.in);
+int a=10;         //
+int b=20;
+int sum=(a+b);
+System.out.println(sum);//prints the sum
+}}
+
+b. Rewrite the above code, wherein the inputs are provided by the user at
+runtime and the output is printed.
+
+import java.util.Scanner;
+public class acad {
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);//std in is used for getting the input at runtime
+int a=sc.nextInt();    
+int b=sc.nextInt();   
+int sum=(a+b);  //sum of both the inputs      
+System.out.println(sum);          //prints the sum
+}}
+
+c. Write a program with the method name, “sum()” that accepts two
+parameters from the user and print the sum of those two numbers. The
+output format should be:
+First number is:
+Second number is:
+Sum is:
+
+import java.util.Scanner;
+public class acad {
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int a=sc.nextInt();     //value of first integer from user
+int b=sc.nextInt();     // value of second integer from user
+System.out.println("First number is:"+a);
+System.out.println("Second number is:"+b);
+sum(a,b);
+}
+//method for calculating and displaying the sum
+public static void sum(int a,int b){
+System.out.println("Sum is:"+(a+b));
+}
+}
+
+d. Write a program to accept two numbers from “stdin” and find all the odd
+as well as even numbers present in between them.
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class acad {
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int a=sc.nextInt();            //value of first integer from user
+int b=sc.nextInt();            //value of second integer from user
+ArrayList<Integer> odd=new ArrayList<Integer>();
+ArrayList<Integer> even=new ArrayList<Integer>();
+for(int i=a;i<=b;i++){
+if(i%2==0)
+even.add(i);               //Storing even numbers in arraylist
+else
+odd.add(i);                //Storing odd numbers in arraylist
+}System.out.println("Odd numbers are:\n");
+for(int i:odd)
+System.out.print(i+" ");
+System.out.println("\nEven numbers are:\n");
+for(int i:even)
+System.out.print(i+" ");
+}
+}
+
+e. Joe is scared to go to school. When her dad asked for the reason, Joe said
+that she was unable to complete the task given to her by her teacher. The
+task was to find the “first 10 multiples” of the number entered from
+“stdin”.
+Example:
+Input: 3
+O/p:
+3 x 1 = 3
+3 x 2 = 6
+………
+………
+…….
+….
+3 x 10 = 30
+Help Joe in completing the task!
+
+import java.util.Scanner;
+
+public class acad {
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();                                     //accepting the number
+System.out.println("Input: "+n);
+System.out.println("O/p:");
+for(int i=1;i<=10;i++){
+System.out.println(n+" x "+i+" = "+(n*i));            //displaying table of given number
+}
+}
+}
+
+f. Write a program consisting the method “sum()” and demonstrate the
+concept of method overloading using this method.
+
+import java.util.Scanner;
+
+public class acad {
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int a=sc.nextInt();       //Accepting 3 numbers from the user
+int b=sc.nextInt();
+int c=sc.nextInt();
+sum(a,b);                 //method with 2 parameters
+sum(a,b,c);               //method with 3 parameters
+}
+  // method overloading
+public static void sum(int a,int b){
+System.out.println("Sum of first 2 numbers is:"+(a+b));
+}
+public static void sum(int a,int b,int c){
+System.out.println("Sum of all 3 numbers is:"+(a+b+c));
+}
+}
+
+
+g. Can you overload a method with the same return type? Explain your
+answer with proper logic.
+
+   yes,we can overload a method with same return type here two methods with
+   same name are created and return type of both is string we have succesfully 
+   overloaded the methods with same return type.
+
+    import java.util.Scanner;
+    public class acad {
+  	public static String string(String a , String b)
+    {
+		String s=a+" "+b;
+		return s;
+    }
+    public static String string(String c)  
+    {
+    	String s1=c;
+         return c;
+    }
+	
+	  public static void main(String args[])
+	  {
+		Scanner sc= new Scanner(System.in);
+		
+		String a = sc.nextLine();
+		String b= sc.nextLine();
+		String c="akshay";
+		System.out.println("String");
+		System.out.println(string(a,b)); //2 String as input
+		System.out.println(string(c));   //1 String as input
+		}
+	  }
+
+h. Write a program in Java using Arrays, that sorts the element in a
+descending order.
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class acad {
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt(); //size of array
+int[] a=new int[n]; // declaration of array
+for(int i=0;i<n;i++){
+a[i]=sc.nextInt();
+}
+Arrays.sort(a);               //sorting of array
+for(int i=a.length-1;i>=0;i--){
+System.out.println(a[i]+" "); // displaying sorted reverse ordered array elements
+}
+}
+}
+
+
+
